@@ -1,0 +1,20 @@
+<h2>メニュー一覧</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>メニュー名</th>
+			<th>カテゴリー 名</th>
+			<th>ステータス</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @menus.each do |menu| %>
+		<tr>
+			<td><%= menu.name %></td>
+			<td><%= menu.category.name %></td>
+			<td><%= menu.status %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

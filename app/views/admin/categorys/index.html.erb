@@ -1,0 +1,30 @@
+<h2>カテゴリー一覧・追加</h2>
+
+<h3>カテゴリー新規登録</h3>
+
+<%= form_for(@category, url: admin_categorys_path) do |f| %>
+  <%= f.label :name, "カテゴリー 名:" %>
+  <%= f.text_field :name %>
+  <%= f.label :image, "画像選択:" %>
+  <%= f.attachment_field :image %>
+  <%= f.submit "登録", class: "btn btn-primaty" %>
+<% end %>
+
+<h3>カテゴリー一覧</h3>
+<table>
+	<thead>
+		<tr>
+			<th>カテゴリー名</th>
+			<th>イメージ画像</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @categorys.each do |category| %>
+		<tr>
+			<td><%= category.name %></td>
+			<td><%= attachment_image_tag category, :image_id, format: "jpeg", size: '100x100', fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
