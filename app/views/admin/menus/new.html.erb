@@ -27,9 +27,9 @@
   		</tr>
   		<tr>
   			<td><%= f.label :status, "在庫状況" %></td>
-  			<td><%= f.radio_button :status, true %>
+  			<td><%= f.radio_button :status, :在庫あり %>
   				<%= f.label :status, "在庫あり" %>
-  				<%= f.radio_button :status, false %>
+  				<%= f.radio_button :status, :品切れ %>
   				<%= f.label :status, "品切れ" %>
   			</td>
   		</tr>

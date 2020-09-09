@@ -9,17 +9,29 @@ class Admin::MenusController < ApplicationController
 
   def create
     @menu = Menu.new(menu_params)
-    @menu.save
-    redirect_to admin_menus_path(@menu)
+    if @menu.save
+       redirect_to admin_menus_path(@menu)
+     else
+      render 'new'
+    end
   end
 
   def show
+    @menu = Menu.find(params[:id])
   end
 
   def edit
+    @menu = Menu.find(params[:id])
   end
 
   def update
+    @menu = Menu.find(params[:id])
+     if @menu.update(menu_params)
+         redirect_to admin_menu_path(@menu)
+      else
+        render 'edit'
+      end
+
   end
 
 private

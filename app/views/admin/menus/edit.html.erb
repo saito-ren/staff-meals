@@ -1,2 +1,42 @@
-<h1>Admin::Menus#edit</h1>
-<p>Find me in app/views/admin/menus/edit.html.erb</p>
+<h2>メニュー編集</h2>
+
+<h2><%= @menu.name %>の編集</h2>
+
+<%= form_for(@menu, url: admin_menu_path(@menu)) do |f| %>
+  <%= f.label :image, "画像" %>
+  <%= attachment_image_tag @menu, :image_id, format: "jpeg", size: '150x150', fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
+  <%= f.attachment_field :image %>
+
+  <table>
+  	<thead>
+  		<tr>
+  			<th></th>
+  			<th></th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr>
+  			<td><%= f.label :name, "商品名" %></td>
+  			<td><%= f.text_field :name %></td>
+  		</tr>
+  		<tr>
+  			<td><%= f.label :introduction, "メニュー説明" %></td>
+  			<td><%= f.text_area :introduction %></td>
+  		</tr>
+  		<tr>
+  			<td><%= f.label :category_id, "カテゴリー" %></td>
+  			<td><%= f.collection_select :category_id, Category.all, :id, :name, include_blank: "--選択してください--" %></td>
+  		</tr>
+  		<tr>
+  			<td><%= f.label :status, "在庫状況" %></td>
+  			<td><%= f.radio_button :status, :在庫あり %>
+  				<%= f.label :status, "在庫あり" %>
+  				<%= f.radio_button :status, :品切れ %>
+  				<%= f.label :status, "品切れ" %>
+  			</td>
+  		</tr>
+  	</tbody>
+  </table>
+
+  <%= f.submit "更新", class: "btn btn-primary" %>
+  <% end %>

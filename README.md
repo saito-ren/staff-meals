@@ -1,24 +1,22 @@
-# README
+# Staff Meals
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+このアプリは飲食店の賄い検索アプリです。
+管理者は商品の追加、今日のおすすめを設定、ユーザーである従業員は今日のおすすめ、ランキング、カテゴリー検索から今日の食事を決めることができ、履歴も確認できる。
 
-Things you may want to cover:
+### サイトテーマ
+飲食店従業員の賄い選択をサポートし、管理するアプリ
 
-* Ruby version
+### テーマを選んだ理由
+飲食店で勤務をしていた際に賄いを悩んでる従業員が自分自身を含め多く、気分によって決めてくれるアプリがあったら便利だと考えました。
 
-* System dependencies
+### ターゲットユーザ
+飲食店従業員
 
-* Configuration
+### 主な利用シーン
+飲食店勤務時
 
-* Database creation
+## 設計書
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1aJEqnZWkC6a0IiNPXJzmZxEBmJFd_8y0Oj9BIfqjYTM/edit#gid=0

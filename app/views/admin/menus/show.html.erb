@@ -1,2 +1,22 @@
-<h1>Admin::Menus#show</h1>
-<p>Find me in app/views/admin/menus/show.html.erb</p>
+<h2>メニュー詳細</h2>
+
+<%= attachment_image_tag @menu, :image_id, format: "jpeg", size: '100x100', fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
+<%= @menu.category.name %>
+<%= @menu.status %>
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @menu.name %></td>
+			<td><%= @menu.introduction %></td>
+		</tr>
+	</tbody>
+</table>
+
+<%= link_to "編集する", edit_admin_menu_path(@menu) %>
