@@ -6,8 +6,11 @@ class Admin::CategorysController < ApplicationController
 
   def create
   	@category = Category.new(category_params)
-  	@category.save
-  	redirect_to admin_categorys_path
+  	if @category.save
+  	  redirect_to request.referer, notice: "登録されました"
+  	else
+      redirect_to request.referer, notice: "カテゴリー名が空欄です"
+    end
   end
 
 private

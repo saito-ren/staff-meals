@@ -2,16 +2,16 @@ Rails.application.routes.draw do
   namespace :admin do
    resources :categorys, only: [:index, :create]
    resources :menus, only: [:index, :new, :create, :show, :edit, :update]
+   resources :orders, only: [:index]
+   resources :employees only: [:index, :show]
+  end
 
+  namespace :employee do
+  	resources :orders, only: [:index, :show, :create]
+  	get 'orders/thank' => 'orders#thank'
+    resources :menus, only: [:index, :show]
   end
-  namespace :admin do
-    get 'orders/index'
-  end
-  namespace :admin do
-    get 'employees/index'
-    get 'employees/show'
-  end
- 
+
   devise_for :employees, controllers: {
   	sessions: 'employees/sessions',
   	registrations: 'employees/registrations'
