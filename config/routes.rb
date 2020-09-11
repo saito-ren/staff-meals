@@ -3,11 +3,11 @@ Rails.application.routes.draw do
    resources :categorys, only: [:index, :create]
    resources :menus, only: [:index, :new, :create, :show, :edit, :update]
    resources :orders, only: [:index]
-   resources :employees only: [:index, :show]
+   resources :employees, only: [:index, :show]
   end
 
   namespace :employee do
-  	resources :orders, only: [:index, :show, :create]
+  	resources :orders, only: [:index, :create]
   	get 'orders/thank' => 'orders#thank'
     resources :menus, only: [:index, :show]
   end
