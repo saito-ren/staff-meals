@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   	resources :orders, only: [:index, :create]
   	get 'orders/thank' => 'orders#thank'
     resources :menus, only: [:index, :show]
+    resources :employees, only: [:show, :edit, :update]
+    get '/employees/top' => 'employees#top'
+    get '/employees/about' => 'employees#about'
+    get '/employees/withdraw' => 'employees#withdraw'
+    patch '/employees/hide' => 'employees#hide'
   end
 
   devise_for :employees, controllers: {
