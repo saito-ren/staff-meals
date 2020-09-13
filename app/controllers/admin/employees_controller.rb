@@ -1,6 +1,6 @@
 class Admin::EmployeesController < ApplicationController
   def index
-  	@employees = Employee.page(params[:page])
+  	@employees = Employee.page(params[:page]).per(5)
   end
 
   def show

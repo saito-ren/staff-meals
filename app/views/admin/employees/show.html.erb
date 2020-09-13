@@ -34,7 +34,7 @@
 			<td><%= @employee.status %></td>
 		</tr>
 		<tr>
-			<td><%= link_to "注文履歴一覧を見る", admin_orders_path %></td>
+			<td><%= link_to "注文履歴一覧を見る", admin_orders_path(@employee), class: "btn btn-primary" %></td>
 		</tr>
 	</tbody>
 </table>

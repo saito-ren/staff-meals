@@ -1,0 +1,14 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>カテゴリー検索</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% categorys.each do |category| %>
+		  <tr>
+		  	<td><%= link_to employee.name, employee_menus_path(category_id: category) %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>

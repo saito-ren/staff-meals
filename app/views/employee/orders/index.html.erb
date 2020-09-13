@@ -1,7 +1,8 @@
+<div class="container">
 <h2>注文履歴一覧</h2>
 
-<table>
-	<thead>
+<table class="table">
+	<thead class="thead-light">
 		<tr>
 			<th>注文日時</th>
 			<th>メニュー名</th>
@@ -13,7 +14,7 @@
 		<tr>
 			<td><%= order.created_at.strftime('%Y/%m/%d/%H:%M:%S') %></td>
 			<td><%= link_to order.menu.name, employee_menu_path(order.menu.id) %></td>
-			<td><%= link_to "再度注文する", employee_orders_path, :method => :post %></td>
+			<td><%= link_to "再度注文する", employee_orders_path, :method => :post, class="btn btn-outline-primary"%></td>
 		</tr>
 	</tbody>
 </table>

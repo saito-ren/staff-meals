@@ -1,8 +1,18 @@
-<h2><%= @menu.name %></h2>
+<div class="container">
+	<div class="row">
+      <h2><%= @menu.name %></h2>
+    </div>
+    <div class="row">
+	  <div class="col-xs-3">
+		<%= render 'layouts/sidebar', category: @categorys %>
+		</div>
+		<div class="col-xs-4">
+			<%= attachment_image_tag @menu, :image, format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
+			<h4><%= @menu.introduction %></h4>
+			<p>カテゴリー： <%= link_to @menu.category.name, menus_path(category_id: @menu.category_id) %></p>
+			<p>ステータス： <%= @menu.status %></p>
 
-<%= attachment_image_tag @menu, :image, format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
-<h4><%= @menu.introduction %></h4>
-<p>カテゴリー： <%= link_to @menu.category.name, menus_path(category_id: @menu.category_id) %></p>
-<p>ステータス： <%= @menu.status %></p>
-
-<%= link_to "注文する", employee_orders_path, :method => :post %>
+			<%= link_to "注文する", employee_orders_path, :method => :post, class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>

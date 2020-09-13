@@ -1,8 +1,16 @@
-<h2>メニュー一覧</h2>
+<div class="container">
 
-<table>
+<div class="row">
+<h2>メニュー一覧</h2>
+<%= link_to new_admin_product_path do %>
+<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+<% end %>
+</div>
+
+<div class="row">
+<table class="table">
 	<thead>
-		<tr>
+		<tr class="active">
 			<th>メニュー名</th>
 			<th>カテゴリー 名</th>
 			<th>ステータス</th>
@@ -18,3 +26,6 @@
 		<% end %>
 	</tbody>
 </table>
+<%= paginate @menus, class: "pagination" %>
+</div>
+</div>

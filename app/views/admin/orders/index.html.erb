@@ -1,3 +1,5 @@
+<div class="container">
+	<div class="row">
 <h2>
   <% if params[:emproyee_id] %>
 	<%= @emproyee.full_name %>さんの注文履歴一覧
@@ -6,7 +8,7 @@
   <% end %>
 </h2>
 
-<table>
+<table class="table">
 	<thead>
 		<tr>
 			<th>注文日時</th>
@@ -25,3 +27,5 @@
 	</tbody>
 </table>
 <%= paginate @orders %>
+</div>
+</div>

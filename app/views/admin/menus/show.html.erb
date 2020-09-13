@@ -1,6 +1,13 @@
+<div class="container">
+<div class="row">
 <h2>メニュー詳細</h2>
+</div>
+<div class="row">
+<div class="col-lg-4">
 
 <%= attachment_image_tag @menu, :image_id, format: "jpeg", size: '100x100', fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
+</div>
+<div class="col-lg-8">
 <%= @menu.category.name %>
 <%= @menu.status %>
 
@@ -20,3 +27,6 @@
 </table>
 
 <%= link_to "編集する", edit_admin_menu_path(@menu) %>
+</div>
+</div>
+</div>

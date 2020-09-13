@@ -1,0 +1,36 @@
+<section class="wrapper flex">
+	<div class="sidebar">
+		<h3>カテゴリー検索</h3>
+		<%= render 'layouts/sidebar', category: @category %>
+
+	</div>
+	<div class="content">
+		<div class="mv">
+			<p>
+				ようこそ、NaganoCakeへ!<br>
+				このサイトは、ケーキ販売のECサイトになります。<br>
+				会員でない方も商品の閲覧はできますが、<br>
+				購入には会員登録が必要になります。
+			</p>
+		</div>
+		<h2 class="section-ttl">オススメ商品</h2>
+		<div class="items">
+			<% @items.each do |item| %>
+				<%= link_to item_path(item) do %>
+					<%= attachment_image_tag item, :image, size: '100x100', format: "jpeg", fallback: "no-image.png" %>
+					<h5><%= item.genre.name %></h5>
+					<p><%= item.name %></p>
+					<p><%= item.with_tax_price %>円</p>
+				<% end %>
+			<% end %>
+			<h2>ランキング</h2>
+			<% @rank_menus.each.with_index(1) do |menu, i| %>
+			  <%= link_to employee_menu_path(rank_menu) do %>
+			    <%= attachment_image_tag rank_menu, :image, size: '100x100', format: "jpeg", fallback: "no-image.png" %>
+			    <h4>第<%= i %> 位</h4>
+			    <h3><%= menu.name %></h3>
+			  <% end %>
+			<% end %>
+		</div>
+	</div>
+</section>

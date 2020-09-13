@@ -10,7 +10,7 @@ class Employee::MenusController < ApplicationController
 	end
 
 	def show
-		@category = Category.all
+		@categorys = Category.all
 		@menu = Menu.find(params[:id])
 	end
 
