@@ -1,0 +1,40 @@
+ja:
+  activerecord:
+    attributes:
+      employee:
+        email: "メールアドレス"
+        last_name: "姓"
+        first_name: "名"
+        last_name_kana: "セイ"
+        first_name_kana: "メイ"
+        gender: "性別"
+        position: "役職"
+        password: "パスワード"
+        password_confirmation: "パスワード(確認用)"
+        current_password: "現在のパスワード"
+      category:
+        name: "カテゴリー 名"
+  enums:
+    employee:
+      gender:
+        man: "男"
+        woman: "女"
+  errors:
+    messages:
+      already_confirmed: "メールアドレスは既に登録されています。"
+      not_saved: 
+        one: "エラーが発生しました。以下ご確認お願いいたします。"
+        other: "エラーが発生しました。以下ご確認お願いいたします。"
+  devise:
+    failure:
+      already_authenticated: "既にログイン済みです。"
+      invalid: "メールアドレスまたはパスワードが正しくありません。"
+      not_found_in_database: "メールアドレスまたはパスワードが正しくありません。"
+      unauthenticated: "続けるにはログインが必要です。"
+    registrations:
+      signed_up: "会員登録が完了しました。ようこそNaganoCakeへ！"
+      updated: "パスワードの更新が完了しました。"
+    sessions:
+      signed_in: "ログインが完了しました。"
+      signed_out: "ログアウトが完了しました。"
+      already_signed_out: "ログアウトが完了しました。"

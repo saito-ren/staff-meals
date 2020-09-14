@@ -5,7 +5,7 @@ class Employee::EmployeesController < ApplicationController
 
 	def edit
 		@employee = Employee.find(params[:id])
-		if cuurent_employee.id != @employee.id
+		if current_employee.id != @employee.id
 			redirect_to employee_employee_path(@employee)
 		end
 	end
@@ -18,13 +18,12 @@ class Employee::EmployeesController < ApplicationController
 			flash[:danger] = "登録内容を登録できませんでした。未入力を確認してください。"
 			render :edit
 		end
-
 	end
 
 	def top
 		@categorys = Category.all
 		@menus = Menu.order("RANDOM()").limit(1)
-		@rank_menus = Menu.find(Order.group(:menu_id).order('count(menu_id) desc').limit(3).pluck(:menu_id)
+		@rank_menus = Menu.find(Order.group(:menu_id).order('count(menu_id) desc').limit(3).pluck(:menu_id))
 	end
 
 	def about

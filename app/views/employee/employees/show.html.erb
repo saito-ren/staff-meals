@@ -2,10 +2,10 @@
 <% if flash[:notice] %>
 <p class="text-active"><%= flash[:notice] %></p>
 <% end %>
-<h2><%= @employee.full_name %>さんのマイページ</h2>
+<h2>マイページ</h2>
 <h3>登録情報
-	<%= link_to "編集する", edit_information_path, class: "btn btn-success ml2" %>
-	<%= link_to "パスワードを変更する", edit_customer_registration_path, class: "btn btn-success ml2" %>
+	<%= link_to "編集する", edit_employee_employee_path(current_employee), class: "btn btn-success ml2" %>
+	<%= link_to "パスワードを変更する", edit_employee_registration_path, class: "btn btn-success ml2" %>
 </h3>
 <table>
 	<thead>
@@ -25,7 +25,7 @@
 			<td>(メイ) <%= @employee.last_name_kana %></td>
 		</tr>
 		<tr>
-			<td>性別：　<%= @employee.gender %>  役職： <%= @employee.position %></td>
+			<td>性別： <%= @employee.gender %>  役職： <%= @employee.position %></td>
 		</tr>
 		<tr>
 			<td>メールアドレス</td>

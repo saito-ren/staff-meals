@@ -2,7 +2,7 @@
 	<div class="row">
       <h2>登録情報編集</h2>
     </div>
-<%= form_for @employee do |f| %>
+<%= form_for @employee, url: employee_employee_path do |f| %>
 	<table>
 		<thead>
 			<th></th>
@@ -27,9 +27,9 @@
 			<tr>
 				<td>性別</td>
 				<td><%= f.label :男  %>
-			        <%= f.radio_button :gender, :man %>
+			        <%= f.radio_button :gender, :男 %>
 			        <%= f.label :女  %>
-			        <%= f.radio_button :gender, :woman %></td>
+			        <%= f.radio_button :gender, :女 %></td>
 			</tr>
 			<tr>
 				<td>役職</td>
@@ -40,4 +40,5 @@
 			</tr>
 		</tbody>
 	</table>
+	<% end %>
 </div>

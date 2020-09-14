@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+root to: 'employee/employees#top'
+
   namespace :admin do
    resources :categorys, only: [:index, :create]
    resources :menus, only: [:index, :new, :create, :show, :edit, :update]

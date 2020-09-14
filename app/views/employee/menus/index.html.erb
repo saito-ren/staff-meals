@@ -1,5 +1,5 @@
 <div class="col-xs-3">
-	<%= render 'layouts/sidebar', category: @categorys %>
+	<%= render 'layouts/sidebar', categorys: @categorys %>
 </div>
 
 <div class="col-xs-8">
@@ -11,10 +11,10 @@
 
 <p>※各メニューの画像をクリックすると注文ページに進みます。</p>
 
-<% if @category.exists? %>
+<% if @categorys.first %>
   <% @menus.each do |menu| %>
     <%= link_to employee_menu_path(menu.id) do %>
-      <%= attachment_image_tag menu, :image, format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
+      <%= attachment_image_tag menu, :image, format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png", size: '100x100' %>
       <h5><%= menu.category.name %></h5>
       <p><%= menu.name %> (<%= menu.status %>)</p>
     <% end %>

@@ -4,7 +4,7 @@ class Employee::OrdersController < ApplicationController
     end
 
 	def create
-		@order = Order.new(order_params)
+		@order = Order.new(employee_id: current_employee.id, menu_id: params[:menu_id])
 		@order.save
 		redirect_to employee_orders_thank_path
 	end
@@ -12,8 +12,4 @@ class Employee::OrdersController < ApplicationController
 	def thank
 	end
 
-	private
-	def order_params
-		params.require(:order).permit(:menu_id, :employee_id)
-	end
 end

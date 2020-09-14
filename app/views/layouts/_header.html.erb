@@ -1,9 +1,8 @@
 <header class="container-fluid middle-blue-back">
   <nav class="navbar navbar-expand-lg">
-    <!-- ロゴ画像。あとで差し替え。 -->
     <div style="margin-top: 20px;">
-      <%= link_to members_top_path, style: 'color: #fcbf1e' do %>
-        <%= image_tag 'img/logo.png', class: "logo" %>
+      <%= link_to employee_employees_top_path, style: 'color: #fcbf1e' do %>
+       <%= image_tag "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png", size: '50x50', class: "logo" %>
       <% end %>
     </div>
 
@@ -14,46 +13,43 @@
         <% if admin_signed_in? %>
           <p>管理者としてログインしています</p>
           <div class="btn-group">
-            <li class="btn btn-default"><%= link_to 'メニュー一覧', admin_products_path, class: 'nav-link' %></li>
-            <li class="btn btn-default"><%= link_to '従業員一覧', admin_members_path, class: 'nav-link' %></li>
+            <li class="btn btn-default"><%= link_to 'メニュー一覧', admin_menus_path, class: 'nav-link' %></li>
+            <li class="btn btn-default"><%= link_to '従業員一覧', admin_employees_path, class: 'nav-link' %></li>
             <li class="btn btn-default"><%= link_to '注文履歴一覧', admin_orders_path, class: 'nav-link' %></li>
-            <li class="btn btn-default"><%= link_to 'カテゴリー管理', admin_genres_path, class: 'nav-link' %></li>
+            <li class="btn btn-default"><%= link_to 'カテゴリー管理', admin_categorys_path, class: 'nav-link' %></li>
             <li class="btn btn-default"><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
         </div>
         <!-- 検索窓 -->
-           <div class="form-inline my-2 my-lg-0">
+           <!-- <div class="form-inline my-2 my-lg-0">
              <%= form_tag(admin_search_path, method: :get) do %>
                <%= text_field_tag 'search[content]', '', class: "form-control mr-sm-2", placeholder: "検索..."  %>
                <%= select_tag 'search[model]', options_for_select({ "会員検索" => "member", "商品検索" => "product"}), class: "form-control my-2 my-sm-0" %>
                <%= submit_tag '検索', class: "btn btn-outline-success my-2 my-sm-0" %>
             <% end %>
-           </div>
-        <!-- member -->
-        <% elsif member_signed_in? %>
-          <p>ようこそ<%= current_member.last_name %>
-                  <%= current_member.first_name %>さん！</p>
-　　　　　<!-- ログイン　-->
+           </div> -->
+        <!-- employee -->
+        <% elsif employee_signed_in? %>
+     <!-- ログイン -->
           <div class="btn-group">
-            <li class="btn btn-default"><%= link_to 'About', members_about_path, class: 'nav-link' %></li>
+            <li class="btn btn-default"><%= link_to 'About', employee_employees_about_path, class: 'nav-link' %></li>
 
-            <li class="btn btn-default"><%= link_to 'マイページ', member_path(current_member), class: 'nav-link' %></li>
+            <li class="btn btn-default"><%= link_to 'マイページ', employee_employee_path(current_employee), class: 'nav-link' %></li>
 
-            <li class="btn btn-default"><%= link_to 'メニュー一覧', member_products_path, class: 'nav-link' %></li>
-            <li class="btn btn-default"><%= link_to 'カート', member_carts_path, class: 'nav-link' %></li>
-            <li class="btn btn-default"><%= link_to 'ログアウト', destroy_member_session_path, method: :delete, class: 'nav-link' %></li>
+            <li class="btn btn-default"><%= link_to 'メニュー一覧', employee_menus_path, class: 'nav-link' %></li>
+            
+            <li class="btn btn-default"><%= link_to 'ログアウト', destroy_employee_session_path, method: :delete, class: 'nav-link' %></li>
         <!-- 非ログイン -->
         <% else %>
-            <li class="btn btn-default"><%= link_to 'About', members_about_path, class: 'nav-link' %></li>
-            <li class="btn btn-default"><%= link_to 'メニュー一覧', member_products_path, class: 'nav-link' %></li>
-            <li class="btn btn-default"><%= link_to '新規登録', new_member_registration_path, class: 'nav-link' %></li>
-            <li class="btn btn-default"><%= link_to 'ログイン', new_member_session_path, class: 'nav-link' %></li>
+            <li class="btn btn-default"><%= link_to 'About', employee_employees_about_path, class: 'nav-link' %></li>
+            <li class="btn btn-default"><%= link_to 'メニュー一覧', employee_menus_path, class: 'nav-link' %></li>
+            <li class="btn btn-default"><%= link_to '新規登録', new_employee_registration_path, class: 'nav-link' %></li>
+            <li class="btn btn-default"><%= link_to 'ログイン', new_employee_session_path, class: 'nav-link' %></li>
           </div>
         <% end %>
       </ul>
       <!-- メッセージ(member) -->
-      <% if member_signed_in? %>
-        <p>ようこそ<%= current_member.last_name %>
-                  <%= current_member.first_name %>さん！</p>
+      <% if employee_signed_in? %>
+        <p>おはようございます！<%= current_employee.full_name %>さん！</p>
       <% end %>
   </div>
     </div>

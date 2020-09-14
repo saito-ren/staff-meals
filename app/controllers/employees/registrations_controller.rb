@@ -52,8 +52,11 @@ class Employees::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    admin_categorys_index_path
+    employee_employee_path(resource)
   end
+
+  def after_update_path_for(resource)
+    employee_employee_path(resource)
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

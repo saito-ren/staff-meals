@@ -16,10 +16,10 @@
       <div class='col-lg-8'>
         <div class="row">
           <div class="col-lg-6">
-            (姓)<%= f.text_field :last_name, autofocus: true, autocomplete: 'last_name', class: 'form-control' %>
+            (姓)<%= f.text_field :first_name, autofocus: true, autocomplete: 'first_name', class: 'form-control' %>
           </div>
           <div class="col-lg-6">
-            (名)<%= f.text_field :first_name, autofocus: true, autocomplete: 'first_name', class: 'form-control' %>
+            (名)<%= f.text_field :last_name, autofocus: true, autocomplete: 'last_name', class: 'form-control' %>
           </div>
         </div>
       </div>
@@ -32,10 +32,10 @@
       <div class='col-lg-8'>
         <div class="row">
           <div class="col-lg-6">
-            (セイ)<%= f.text_field :last_name_kana, autofocus: true, autocomplete: 'last_name_kana', class: 'form-control' %>
+            (セイ)<%= f.text_field :first_name_kana, autofocus: true, autocomplete: 'first_name_kana', class: 'form-control' %>
           </div>
           <div class="col-lg-6">
-            (メイ)<%= f.text_field :first_name_kana, autofocus: true, autocomplete: 'first_name_kana', class: 'form-control' %>
+            (メイ)<%= f.text_field :last_name_kana, autofocus: true, autocomplete: 'last_name_kana', class: 'form-control' %>
           </div>
         </div>
       </div>
@@ -58,9 +58,9 @@
       </div>
       <div class='col-lg-8'>
         <%= f.label :男  %>
-        <%= f.radio_button :gender, :man %>
+        <%= f.radio_button :gender, :男 %>
         <%= f.label :女  %>
-        <%= f.radio_button :gender, :woman %>
+        <%= f.radio_button :gender, :女%>
       </div>
     </div>
 
