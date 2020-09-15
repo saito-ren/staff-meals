@@ -1,4 +1,5 @@
 class Employee::OrdersController < ApplicationController
+	before_action :authenticate_employee!
     def index
     	@orders = Order.where(employee_id: current_employee.id).page(params[:page]).per(8)
     end

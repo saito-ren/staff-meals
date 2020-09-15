@@ -1,0 +1,7 @@
+<% if @model == 'employee' %>
+  <h3>従業員の検索結果：検索ワード'<%= @content %>'</h3>
+    <%= render 'admin/employees/index', employees: @records %>
+  <% else @model == 'menu' %>
+  <h3>メニューの検索結果：検索ワード '<%= @content %>'</h3>
+    <%= render 'admin/menus/index', menus: @records %>
+  <% end %>

@@ -18,15 +18,16 @@
             <li class="btn btn-default"><%= link_to '注文履歴一覧', admin_orders_path, class: 'nav-link' %></li>
             <li class="btn btn-default"><%= link_to 'カテゴリー管理', admin_categorys_path, class: 'nav-link' %></li>
             <li class="btn btn-default"><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
-        </div>
+          </div>
         <!-- 検索窓 -->
-           <!-- <div class="form-inline my-2 my-lg-0">
+           <div class="form-inline my-2 my-lg-0">
              <%= form_tag(admin_search_path, method: :get) do %>
                <%= text_field_tag 'search[content]', '', class: "form-control mr-sm-2", placeholder: "検索..."  %>
-               <%= select_tag 'search[model]', options_for_select({ "会員検索" => "member", "商品検索" => "product"}), class: "form-control my-2 my-sm-0" %>
+               <%= select_tag 'search[model]', options_for_select({ "従業員検索" => "employee", "メニュー検索" => "menu"}), class: "form-control my-2 my-sm-0" %>
+               <%= select_tag 'search[method]', options_for_select({"完全一致" => "perfect", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
                <%= submit_tag '検索', class: "btn btn-outline-success my-2 my-sm-0" %>
             <% end %>
-           </div> -->
+           </div>
         <!-- employee -->
         <% elsif employee_signed_in? %>
      <!-- ログイン -->

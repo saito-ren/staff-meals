@@ -1,0 +1,24 @@
+<h2>従業員一覧</h2>
+
+<table class="table table-hover table-inverse table-bordered">
+	<thead class="thead-light">
+		<tr>
+			<th>名前</th>
+			<th>フリガナ</th>
+			<th>役職</th>
+			<th>ステータス</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% employees.each do |employee| %>
+		<tr>
+			<td><%= employee.full_name %></td>
+			<td><%= employee.full_name_kana %></td>
+			<td><%= employee.position %></td>
+			<td><%= employee.status %></td>
+			<td><%= link_to "詳細", admin_employee_path(employee), class: "btn btn-primary" %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
