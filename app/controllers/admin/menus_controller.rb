@@ -12,7 +12,8 @@ class Admin::MenusController < ApplicationController
 
   def create
     @menu = Menu.new(menu_params)
-    if @menu.save
+    Rails.logger.debug(menu_params)
+    if @menu.save!
        redirect_to admin_menus_path(@menu), notice: "登録されました"
      else
       @categorys = Category.all

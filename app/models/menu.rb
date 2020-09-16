@@ -2,7 +2,7 @@ class Menu < ApplicationRecord
 	enum status: { 在庫あり:1, 品切れ:2 }
 
 	belongs_to :category
-	belongs_to :order
+	has_many :orders
 
 	attachment :image
 

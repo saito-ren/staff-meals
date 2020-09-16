@@ -1,5 +1,12 @@
 ja:
   activerecord:
+    errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました。 %{errors}"
+        already_confirmed: "メールアドレスは既に登録されています。"
+        not_saved: 
+          one: "エラーが発生しました。以下ご確認お願いいたします。"
+          other: "エラーが発生しました。以下ご確認お願いいたします。"
     attributes:
       employee:
         email: "メールアドレス"
@@ -19,12 +26,7 @@ ja:
       gender:
         man: "男"
         woman: "女"
-  errors:
-    messages:
-      already_confirmed: "メールアドレスは既に登録されています。"
-      not_saved: 
-        one: "エラーが発生しました。以下ご確認お願いいたします。"
-        other: "エラーが発生しました。以下ご確認お願いいたします。"
+    
   devise:
     failure:
       already_authenticated: "既にログイン済みです。"

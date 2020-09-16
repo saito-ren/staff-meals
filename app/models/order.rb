@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
 belongs_to :employee
-has_many :menus
+belongs_to :menu
 
 end

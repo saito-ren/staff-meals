@@ -31,6 +31,7 @@ class Employee::EmployeesController < ApplicationController
 	end
 
 	def withdraw
+		@employee = current_employee
 	end
 
 	def hide
