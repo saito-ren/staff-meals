@@ -23,4 +23,13 @@ class Employee < ApplicationRecord
   def full_name_kana
   	first_name_kana + " " + last_name_kana
   end
+
+  def active_for_authentication?
+    super && (self.status? == 有効?)
+  end
+
+  def inactive_message
+    "退会済みです"
+  end
+  
 end

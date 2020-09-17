@@ -1,8 +1,8 @@
 <header class="container-fluid middle-blue-back">
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg navbar-fixed-top">
     <div style="margin-top: 20px;">
       <%= link_to employee_employees_top_path, style: 'color: #fcbf1e' do %>
-       <%= image_tag "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png", size: '50x50', class: "logo" %>
+       <%= image_tag "Staff Meals-logo.png", size: '150x150', class: "logo" %>
       <% end %>
     </div>
 
@@ -24,7 +24,7 @@
              <%= form_tag(admin_search_path, method: :get) do %>
                <%= text_field_tag 'search[content]', '', class: "form-control mr-sm-2", placeholder: "検索..."  %>
                <%= select_tag 'search[model]', options_for_select({ "従業員検索" => "employee", "メニュー検索" => "menu"}), class: "form-control my-2 my-sm-0" %>
-               <%= select_tag 'search[method]', options_for_select({"完全一致" => "perfect", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
+               <%= select_tag 'search[method]', options_for_select({"前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
                <%= submit_tag '検索', class: "btn btn-outline-success my-2 my-sm-0" %>
             <% end %>
            </div>
