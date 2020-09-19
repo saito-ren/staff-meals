@@ -13,6 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap-sprockets";  /*ここを追加*/
 @import "bootstrap";            /*ここを追加*/
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+header {
+    color: black;
+	background-image: url("S__28942416.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+header .navbar-left {
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+.nav-link {
+  color: #40bad5;
+}
+
+.login-info{
+	color: white;
+	font-size: 20px;
+}
+
+body {
+  background-image: url("light-veneer.png");
+  padding-bottom: 50px;
+}

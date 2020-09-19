@@ -15,6 +15,19 @@ class Admin::CategorysController < ApplicationController
     end
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      redirect_to admin_categorys_path, notice: "更新されました"
+    else
+      redirect_to request.referer, notice: "カテゴリー名が未入力です"
+    end
+  end
+
 private
 
 def category_params

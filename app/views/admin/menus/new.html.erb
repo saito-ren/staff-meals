@@ -1,9 +1,11 @@
 <h2>メニュー新規登録</h2>
 
 <%= form_for(@menu, url: admin_menus_path) do |f| %>
+<%= render 'layouts/error_messages', resource: menu %>
   <%= f.label :image, "画像" %>
   <%= attachment_image_tag @menu, :image_id, format: "jpeg", size: '150x150', fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
-  <%= f.attachment_field :image %>
+  <span class="btn btn-file btn-info">
+  <%= f.attachment_field :image %>画像選択</span>
 
   <table>
   	<thead>

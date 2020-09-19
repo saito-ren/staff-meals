@@ -1,0 +1,8 @@
+<%= form_for(@category, url: url) do |f| %>
+  <%= render 'layouts/error_messages', resource: category %>
+  <%= f.label :name, "カテゴリー 名:" %>
+  <%= f.text_field :name %></br>
+  <%= f.label :image, "画像選択:" %>
+  <%= f.attachment_field :image %>
+  <%= f.submit submit, class: "btn btn-primaty" %>
+<% end %>
