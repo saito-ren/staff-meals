@@ -1,13 +1,11 @@
 <div class="container">
-	<div class="row">
-      <h2><%= @menu.name %></h2>
-    </div>
-    <div class="row">
-	  <div class="col-xs-3">
+  <div class="row">
+      <div class="col-xs-3" style="margin-top: 50px;">
 		<%= render 'layouts/sidebar', categorys: @categorys %>
-		</div>
-		<div class="col-xs-4">
-			<%= attachment_image_tag @menu, :image, format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png", size: '100x100' %>
+	  </div>
+	  <div class="col-xs-5" style="margin: 50px 0 0 200px;">
+			<%= attachment_image_tag @menu, :image, format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png", size: '300x100' %>
+			<h2><%= @menu.name %></h2>
 			<h4><%= @menu.introduction %></h4>
 			<p>カテゴリー： <%= link_to @menu.category.name, employee_menus_path(category_id: @menu.category_id) %></p>
 			<p>ステータス： <%= @menu.status %></p>

@@ -3,9 +3,16 @@
 <p class="text-active"><%= flash[:notice] %></p>
 <% end %>
 <h2>マイページ</h2>
-<h3>登録情報
+<div class="container">
+<div class="row">
+<div class="col-xs-5"><h3>登録情報</h3></div>
+<div class="col-xs-2">
 	<%= link_to "編集する", edit_employee_employee_path(current_employee), class: "btn btn-success ml2" %>
+</div>
+<div class="col-xs-4">
 	<%= link_to "パスワードを変更する", edit_employee_registration_path, class: "btn btn-success ml2" %>
+</div>
+</div>
 </h3>
 <table>
 	<thead>
@@ -25,7 +32,8 @@
 			<td>(メイ) <%= @employee.last_name_kana %></td>
 		</tr>
 		<tr>
-			<td>性別： <%= @employee.gender %>  役職： <%= @employee.position %></td>
+			<td>性別： <%= @employee.gender %></td>
+		    <td>役職： <%= @employee.position %></td>
 		</tr>
 		<tr>
 			<td>メールアドレス</td>
@@ -37,3 +45,5 @@
 	</tbody>
 </table>
 <%= link_to "注文履歴一覧を見る", employee_orders_path(@employee), class: "btn btn-primary" %>
+</div>
+</div>

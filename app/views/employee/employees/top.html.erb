@@ -1,34 +1,38 @@
-<section class="wrapper flex">
-	<div class="sidebar">
-		<h3>カテゴリー検索</h3>
+<div class="col-xs-3 col-xs-offset-1" style="margin-top: 50px;">
 		<%= render 'layouts/sidebar', categorys: @categorys %>
-
-	</div>
-	<div class="content">
-		<div class="mv">
-			<p>
-				ようこそ、NaganoCakeへ!<br>
-				このサイトは、ケーキ販売のECサイトになります。<br>
-				会員でない方も商品の閲覧はできますが、<br>
-				購入には会員登録が必要になります。
-			</p>
-		</div>
-		<h2 class="section-ttl">今日のオススメ</h2>
-		<div class="items">
+</div>
+	<div class="col-lg-8">
+		<h2 class="recommend-title">今日のオススメ</h2>
+		<div class="recommend-menu">
 			<% @menus.each do |menu| %>
 				<%= link_to employee_menu_path(menu) do %>
-					<%= attachment_image_tag menu, :image, size: '100x100', format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
-					<h5><%= menu.category.name %></h5>
-					<p><%= menu.name %></p>
+					<%= attachment_image_tag menu, :image, size: '250x100', format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
+					<p class="recommend-menu-name"><%= menu.name %></p>
 				<% end %>
 			<% end %>
+		</div>
+
+			<div class="col-xs-9 col-xs-offset-3">
 			<h2>ランキング</h2>
+		    </div>
+
 			<% @rank_menus.each.with_index(1) do |menu, i| %>
+			<div class="col-xs-3 pill-right">
+				<div class="rank-menu">
+			<% if i==1 %>
+			<%= image_tag 'd2b697b8c5e98aeb37b4caa48729b5ca.png', size: '50x50' %>
+			<% elsif i==2 %>
+			<%= image_tag 'bde6ddc8a65ea5436bed9ac7600eba05.png', size: '50x50' %>
+			<% else %>
+			<%= image_tag 'b211351e2eabde63f5c8656807735a5b.png', size: '50x50' %>
+			<% end %>
+				<h4>第 <%= i %> 位</h4>
 			  <%= link_to employee_menu_path(@rank_menus) do %>
 			    <%= attachment_image_tag menu, :image, size: '100x100', format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
-			    <h4>第<%= i %> 位</h4>
-			    <h3><%= menu.name %></h3>
+			    <p class="rank-menu-name"><%= menu.name %></p>
 			  <% end %>
+			</div>
+		</div>
 			<% end %>
 		</div>
 	</div>

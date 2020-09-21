@@ -4,9 +4,9 @@ class Employee < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum gender: { 男: 1, 女: 2}
-  enum status: { 有効:false, 退会済み:true}
-  enum position: {店長: 1, 副店長: 2, 調理責任者: 3, 接客責任者: 4, キッチン: 5, ホール: 6}
+  enum gender: { 男: 1, 女: 2 }
+  enum status: { 有効: false, 退会済み: true }
+  enum position: { 店長: 1, 副店長: 2, 調理責任者: 3, 接客責任者: 4, キッチン: 5, ホール: 6 }
 
   has_many :orders
 
@@ -17,19 +17,18 @@ class Employee < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   def full_name
-  	first_name + " " + last_name
+    first_name + " " + last_name
   end
 
   def full_name_kana
-  	first_name_kana + " " + last_name_kana
+    first_name_kana + " " + last_name_kana
   end
 
   def active_for_authentication?
-    super && (self.status? == 有効?)
+    super && (status? == 有効?)
   end
 
   def inactive_message
     "退会済みです"
   end
-  
 end

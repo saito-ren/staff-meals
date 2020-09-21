@@ -8,6 +8,7 @@
 		<% categorys.each do |category| %>
 		  <tr>
 		  	<td><%= link_to category.name, employee_menus_path(category_id: category) %></td>
+		  	<td><%= attachment_image_tag category, :image, format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png", size: '50x50' %></td>
 		  </tr>
 		<% end %>
 	</tbody>

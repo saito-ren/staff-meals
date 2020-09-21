@@ -1,8 +1,18 @@
-<%= form_for(@category, url: url) do |f| %>
+<div class="form-inline">
+<%= form_for(category, url: url) do |f| %>
   <%= render 'layouts/error_messages', resource: category %>
   <%= f.label :name, "カテゴリー 名:" %>
   <%= f.text_field :name %></br>
-  <%= f.label :image, "画像選択:" %>
+ <div class="form-group row">
+  <%= f.label :image, "画像選択:", class: "col-sm-3 col-form-label"%>
+  <div class="col-sm-9">
   <%= f.attachment_field :image %>
-  <%= f.submit submit, class: "btn btn-primaty" %>
+  <div class="form-group row">
+  	<div class="col-xs-3">
+  <%= f.submit submit, class: "btn btn-primary" %>
+    </div>
+  </div>
+  </div>
+</div>
 <% end %>
+</div>

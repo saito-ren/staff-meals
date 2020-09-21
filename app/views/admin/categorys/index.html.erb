@@ -6,6 +6,7 @@
 <%= render 'form', category: @category, url: admin_categorys_path, submit: '登録' %>
 
 <h3>カテゴリー一覧</h3>
+<div class="container pull-left">
 <table class="table table-inverse">
 	<thead>
 		<tr>
@@ -24,3 +25,5 @@
 		<% end %>
 	</tbody>
 </table>
+</div>
+<%= paginate @categorys %>

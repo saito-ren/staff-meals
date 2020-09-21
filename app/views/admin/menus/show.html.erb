@@ -1,32 +1,43 @@
 <div class="container">
-<div class="row">
-<h2>メニュー詳細</h2>
-</div>
-<div class="row">
-<div class="col-lg-4">
+  <div class="row">
+    <h2>メニュー詳細</h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
 
-<%= attachment_image_tag @menu, :image_id, format: "jpeg", size: '100x100', fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
-</div>
-<div class="col-lg-8">
-<%= @menu.category.name %>
-<%= @menu.status %>
+      <%= attachment_image_tag @menu, :image_id, format: "jpeg", size: '120x120', fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
+    </div>
+    <div class="col-lg-8">
 
-<table>
-	<thead>
-		<tr>
+      <table>
+	    <thead>
+		  <tr>
 			<th></th>
 			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
+		  </tr>
+	    </thead>
+	    <tbody>
+		  <tr>
+			<td>メニュー名:</td>
 			<td><%= @menu.name %></td>
+		  </tr>
+		  <tr>
+			<td>メニュー説明:</td>
 			<td><%= @menu.introduction %></td>
-		</tr>
-	</tbody>
-</table>
+		  </tr>
+		  <tr>
+			<td>カテゴリー:</td>
+			<td><%= @menu.category.name %></td>
+		  </tr>
+		  <tr>
+			<td>ステータス:</td>
+			<td><%= @menu.status %></td>
+		  </tr>
+	    </tbody>
+      </table>
 
-<%= link_to "編集する", edit_admin_menu_path(@menu) %>
+<%= link_to "編集する", edit_admin_menu_path(@menu), class: "btn btn-info" %>
+<%= link_to "削除する", admin_menu_path(@menu), method: :delete, class: "btn btn-danger" %>
 </div>
 </div>
 </div>

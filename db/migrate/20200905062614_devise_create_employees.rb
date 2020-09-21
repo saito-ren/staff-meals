@@ -4,8 +4,8 @@ class DeviseCreateEmployees < ActiveRecord::Migration[5.2]
   def change
     create_table :employees do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string :email,              null: false, default: ''
+      t.string :encrypted_password, null: false, default: ''
 
       ## Recoverable
       t.string   :reset_password_token
@@ -38,7 +38,6 @@ class DeviseCreateEmployees < ActiveRecord::Migration[5.2]
       t.integer :gender, null: false
       t.integer :position, null: false
       t.boolean :status, null: false, default: false
-
 
       t.timestamps null: false
     end
