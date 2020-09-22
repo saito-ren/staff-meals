@@ -5,7 +5,7 @@ class Employee::MenusController < ApplicationController
       @category = Category.find(params[:category_id])
       @menus = @category.menus.page(params[:page]).reverse_order
     else
-      @menus = Menu.page(params[:page]).reverse_order
+      @menus = Menu.page(params[:page]).per(6)
     end
   end
 

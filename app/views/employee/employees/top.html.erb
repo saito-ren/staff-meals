@@ -6,7 +6,7 @@
 		<div class="recommend-menu">
 			<% @menus.each do |menu| %>
 				<%= link_to employee_menu_path(menu) do %>
-					<%= attachment_image_tag menu, :image, size: '250x100', format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
+					<%= attachment_image_tag menu, :image, size: '300x200', format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
 					<p class="recommend-menu-name"><%= menu.name %></p>
 				<% end %>
 			<% end %>
