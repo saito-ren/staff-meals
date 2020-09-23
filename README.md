@@ -17,6 +17,12 @@
 飲食店勤務時
 
 ## 設計書
+・テーブル定義書
+https://docs.google.com/spreadsheets/d/1yLNsu9xLbxkwSmjaJKx5e0K_fIUOEItpMn2J3On-1Yk/edit#gid=1910596118
+・詳細設計
+https://docs.google.com/spreadsheets/d/1xsUPPNeda7UuJ5fwyS9SilWPeH83CsqEstr-8g8cwqA/edit#gid=703255829
+・チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1aJEqnZWkC6a0IiNPXJzmZxEBmJFd_8y0Oj9BIfqjYTM/edit#gid=0
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1aJEqnZWkC6a0IiNPXJzmZxEBmJFd_8y0Oj9BIfqjYTM/edit#gid=0

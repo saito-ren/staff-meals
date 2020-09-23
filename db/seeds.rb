@@ -33,6 +33,17 @@ Employee.create!(
 	      position: 2,
 	      status: "有効",
 	      password: "atsuatsu",
+      },
+      {
+      	first_name: "田崎",
+	      last_name: "敬浩",
+	      first_name_kana: "タサキ",
+	      last_name_kana: "タカヒロ",
+	      email: "takahiro@ex",
+	      gender: "男",
+	      position: 3,
+	      status: "有効",
+	      password: "takataka",
       }
    ]
    )
