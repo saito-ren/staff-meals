@@ -13,6 +13,7 @@
             <span class="admin-header">
               <p class="admin-login-info">管理者としてログインしています</p>
               <div class="btn-group">
+                <li class="btn btn-default"><%= link_to 'Top', admin_homes_top_path, class: 'nav-link' %></li>
                 <li class="btn btn-default"><%= link_to 'メニュー一覧', admin_menus_path, class: 'nav-link' %></li>
                 <li class="btn btn-default"><%= link_to '従業員一覧', admin_employees_path, class: 'nav-link' %></li>
                 <li class="btn btn-default"><%= link_to '注文履歴一覧', admin_orders_path, class: 'nav-link' %></li>
