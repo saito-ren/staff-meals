@@ -4,7 +4,7 @@
 		<%= render 'layouts/sidebar', categorys: @categorys %>
 	  </div>
 	  <div class="col-xs-5" style="margin: 50px 0 0 200px;">
-			<%= attachment_image_tag @menu, :image, format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png", size: '300x100' %>
+			<%= attachment_image_tag @menu, :image, format: "jpeg", fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png", size: '300x200' %>
 			<h2><%= @menu.name %></h2>
 			<h4><%= @menu.introduction %></h4>
 			<p>カテゴリー： <%= link_to @menu.category.name, employee_menus_path(category_id: @menu.category_id) %></p>
