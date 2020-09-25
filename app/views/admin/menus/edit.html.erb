@@ -6,7 +6,7 @@
 <%= form_for(@menu, url: admin_menu_path(@menu)) do |f| %>
 <%= render 'layouts/error_messages', resource: @menu %>
   <%= f.label :image, "画像" %>
-  <%= attachment_image_tag @menu, :image_id, format: "jpeg", size: '100x100', fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
+  <%= attachment_image_tag @menu, :image, format: "jpeg", size: '100x100', fallback: "2Ol4Vx9bWwqIFD5gONZpD2Syergfe2cB.png" %>
   <%= f.attachment_field :image %>
 
   <table>
