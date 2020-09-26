@@ -1,5 +1,5 @@
 class Employee::EmployeesController < ApplicationController
-  before_action :authenticate_employee!
+  before_action :authenticate_employee!, only:[:show, :edit, :update, :withdraw, :hide]
   def show
     @employee = current_employee
   end
