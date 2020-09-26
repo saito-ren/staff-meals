@@ -23,7 +23,7 @@ class Employee::EmployeesController < ApplicationController
 
   def top
     @categorys = Category.all
-    @menus = Menu.order("RANDOM()").limit(1)
+    @menu = Menu.all.sample
     @rank_menus = Menu.find(Order.group(:menu_id).order('count(menu_id) desc').limit(3).pluck(:menu_id))
   end
 
