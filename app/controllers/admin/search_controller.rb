@@ -10,6 +10,7 @@ class Admin::SearchController < ApplicationController
 
   private
 
+# 前方一致、後方一致、部分一致を指定
   def search_for(model, content, method)
     if model == 'employee'
       if method == 'forward'

@@ -1,5 +1,7 @@
 class Admin::OrdersController < ApplicationController
   before_action :authenticate_admin!
+
+  # 従業員詳細から来た場合と、ヘッダーから来た場合で取得内容を変更
   def index
     path = Rails.application.routes.recognize_path(request.referer)
     path_controller = path[:controller]

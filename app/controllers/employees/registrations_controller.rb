@@ -41,6 +41,7 @@ class Employees::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
+  # サインアップに必要な情報を追加
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name, :first_name, :first_name_kana, :last_name_kana, :gender, :position])
   end
@@ -51,10 +52,12 @@ class Employees::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
+  # サインアップ後のpathを指定
   def after_sign_up_path_for(resource)
     employee_employee_path(resource)
   end
 
+  # 登録情報更新後のpathを指定
   def after_update_path_for(resource)
     employee_employee_path(resource)
   end
